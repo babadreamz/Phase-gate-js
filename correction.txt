@@ -1,0 +1,24 @@
+//for visa,mastercard and discover
+if(array.length < 16 || array.length > 16){
+	validate.valid = false;
+	validate.reason = "Invalid length";
+	}else {
+		if(array.length == 16 && array[0] == 4){
+		validate.issuer = "Visa";
+		}else if(array.length == 16 && array[0] == 5){
+			validate.issuer = "Mastercard";
+			}else if(array.length == 16 && array[0] == 6){
+				validate.issuer = "Discover";
+				}	
+	}
+
+if(!Array.isArray(cardNumbers)){
+return {vald: false; reason : "input must be an array"}
+
+if(cardNumber.length !== 15 && cardNumber.length !== 16){
+	valid : false, reason : "invalid length"
+	}
+	}
+if (!cardNumber.every(n => typeof n === 'number')){
+return {valid : false, reason : "card must contain only numbers"}
+	}

@@ -1,7 +1,13 @@
 const card =(array)=>{
-const validate= {
+	const validate= {
 	valid : true
-	};
+		};
+for(let count = 0; count < array.length; count++){
+	if(isNaN(array[count])){
+	let word = "Invalid card number";
+		return word;
+		}
+	}
 if(array.length < 15){
 validate.valid = false;
 validate.reason = "Invalid length";
@@ -12,7 +18,7 @@ validate.reason = "Invalid length";
 					validate.valid = false;
 					validate.reason = "Invalid card number"
 					} else{
-						//for visa,mastercard and discover
+//for visa,mastercard and discover
 if(array.length < 16 || array.length > 16){
 	validate.valid = false;
 	validate.reason = "Invalid length";
@@ -34,6 +40,5 @@ if(array.length < 16 || array.length > 16){
 
 return validate;
 }
-
-array = [5,5,7,8,9,0,0,1,8,6,5,3,2,3,1,2]
+array = [3,4,3,"a",9,0,0,1,8,6,5,3,2,3,1]
 console.log(card(array));
